@@ -33,12 +33,20 @@
             NewButton = new Button();
             dataGridView1 = new DataGridView();
             tabPage2 = new TabPage();
-            label2 = new Label();
+            SaveButton = new Button();
+            DeleteButton = new Button();
             label1 = new Label();
             panel2 = new Panel();
+            KotaText = new TextBox();
+            AlamatText = new TextBox();
+            label7 = new Label();
+            comboBox1 = new ComboBox();
+            label6 = new Label();
+            TempatLahirText = new TextBox();
             TglLahirPicker = new DateTimePicker();
             label5 = new Label();
             panel1 = new Panel();
+            label2 = new Label();
             NisText = new TextBox();
             label4 = new Label();
             SiswaNameText = new TextBox();
@@ -60,7 +68,7 @@
             tabControl1.Location = new Point(0, 0);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(1128, 639);
+            tabControl1.Size = new Size(1130, 639);
             tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -70,53 +78,69 @@
             tabPage1.Location = new Point(4, 34);
             tabPage1.Name = "tabPage1";
             tabPage1.Padding = new Padding(3);
-            tabPage1.Size = new Size(1120, 601);
+            tabPage1.Size = new Size(1122, 601);
             tabPage1.TabIndex = 0;
             tabPage1.Text = "List Data";
             tabPage1.UseVisualStyleBackColor = true;
             // 
             // NewButton
             // 
+            NewButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             NewButton.Location = new Point(946, 519);
             NewButton.Name = "NewButton";
             NewButton.Size = new Size(152, 49);
             NewButton.TabIndex = 5;
             NewButton.Text = "New";
             NewButton.UseVisualStyleBackColor = true;
-            NewButton.Click += NewButton_Click;
+            NewButton.Click += NewButton_Click_1;
             // 
             // dataGridView1
             // 
+            dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Location = new Point(18, 33);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 62;
             dataGridView1.Size = new Size(1080, 456);
             dataGridView1.TabIndex = 4;
+            dataGridView1.DoubleClick += dataGridView1_DoubleClick_1;
             // 
             // tabPage2
             // 
-            tabPage2.Controls.Add(label2);
+            tabPage2.Controls.Add(SaveButton);
+            tabPage2.Controls.Add(DeleteButton);
             tabPage2.Controls.Add(label1);
             tabPage2.Controls.Add(panel2);
             tabPage2.Controls.Add(panel1);
             tabPage2.Location = new Point(4, 34);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(1120, 601);
+            tabPage2.Size = new Size(1122, 601);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "Input Data";
             tabPage2.UseVisualStyleBackColor = true;
             // 
-            // label2
+            // SaveButton
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.Location = new Point(16, 16);
-            label2.Name = "label2";
-            label2.Size = new Size(82, 28);
-            label2.TabIndex = 3;
-            label2.Text = "Siswa Id";
+            SaveButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            SaveButton.Location = new Point(993, 546);
+            SaveButton.Name = "SaveButton";
+            SaveButton.Size = new Size(112, 34);
+            SaveButton.TabIndex = 10;
+            SaveButton.Text = "Save";
+            SaveButton.UseVisualStyleBackColor = true;
+            SaveButton.Click += SaveButton_Click_1;
+            // 
+            // DeleteButton
+            // 
+            DeleteButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            DeleteButton.Location = new Point(860, 546);
+            DeleteButton.Name = "DeleteButton";
+            DeleteButton.Size = new Size(112, 34);
+            DeleteButton.TabIndex = 9;
+            DeleteButton.Text = "Delete";
+            DeleteButton.UseVisualStyleBackColor = true;
+            DeleteButton.Click += DeleteButton_Click;
             // 
             // label1
             // 
@@ -128,19 +152,83 @@
             // 
             // panel2
             // 
+            panel2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            panel2.BackColor = Color.Silver;
+            panel2.Controls.Add(KotaText);
+            panel2.Controls.Add(AlamatText);
+            panel2.Controls.Add(label7);
+            panel2.Controls.Add(comboBox1);
+            panel2.Controls.Add(label6);
+            panel2.Controls.Add(TempatLahirText);
             panel2.Controls.Add(TglLahirPicker);
             panel2.Controls.Add(label5);
-            panel2.Location = new Point(569, 0);
+            panel2.Location = new Point(566, 1);
             panel2.Name = "panel2";
-            panel2.Size = new Size(550, 600);
-            panel2.TabIndex = 1;
-            panel2.Paint += panel2_Paint;
+            panel2.Size = new Size(550, 521);
+            panel2.TabIndex = 0;
+            // 
+            // KotaText
+            // 
+            KotaText.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            KotaText.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            KotaText.Location = new Point(16, 404);
+            KotaText.Name = "KotaText";
+            KotaText.Size = new Size(518, 31);
+            KotaText.TabIndex = 8;
+            // 
+            // AlamatText
+            // 
+            AlamatText.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            AlamatText.Location = new Point(16, 280);
+            AlamatText.Multiline = true;
+            AlamatText.Name = "AlamatText";
+            AlamatText.Size = new Size(518, 109);
+            AlamatText.TabIndex = 7;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label7.Location = new Point(16, 249);
+            label7.Name = "label7";
+            label7.Size = new Size(133, 28);
+            label7.TabIndex = 11;
+            label7.Text = "Alamat - Kota";
+            // 
+            // comboBox1
+            // 
+            comboBox1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Location = new Point(16, 170);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(518, 33);
+            comboBox1.TabIndex = 6;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label6.Location = new Point(16, 139);
+            label6.Name = "label6";
+            label6.Size = new Size(76, 28);
+            label6.TabIndex = 9;
+            label6.Text = "Gender";
+            // 
+            // TempatLahirText
+            // 
+            TempatLahirText.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            TempatLahirText.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            TempatLahirText.Location = new Point(16, 47);
+            TempatLahirText.Name = "TempatLahirText";
+            TempatLahirText.Size = new Size(518, 31);
+            TempatLahirText.TabIndex = 4;
             // 
             // TglLahirPicker
             // 
-            TglLahirPicker.Location = new Point(16, 78);
+            TglLahirPicker.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            TglLahirPicker.Location = new Point(16, 92);
             TglLahirPicker.Name = "TglLahirPicker";
-            TglLahirPicker.Size = new Size(516, 31);
+            TglLahirPicker.Size = new Size(518, 31);
             TglLahirPicker.TabIndex = 5;
             // 
             // label5
@@ -149,21 +237,34 @@
             label5.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label5.Location = new Point(16, 16);
             label5.Name = "label5";
-            label5.Size = new Size(82, 28);
+            label5.Size = new Size(166, 28);
             label5.TabIndex = 4;
-            label5.Text = "Siswa Id";
+            label5.Text = "Tempat - Tgl Lahir";
             // 
             // panel1
             // 
+            panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
+            panel1.BackColor = Color.Silver;
+            panel1.Controls.Add(label2);
             panel1.Controls.Add(NisText);
             panel1.Controls.Add(label4);
             panel1.Controls.Add(SiswaNameText);
             panel1.Controls.Add(label3);
             panel1.Controls.Add(SiswaIdText);
-            panel1.Location = new Point(0, 0);
+            panel1.Location = new Point(1, 1);
             panel1.Name = "panel1";
-            panel1.Size = new Size(550, 600);
+            panel1.Size = new Size(550, 521);
             panel1.TabIndex = 0;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label2.Location = new Point(14, 16);
+            label2.Name = "label2";
+            label2.Size = new Size(82, 28);
+            label2.TabIndex = 8;
+            label2.Text = "Siswa Id";
             // 
             // NisText
             // 
@@ -171,8 +272,7 @@
             NisText.Location = new Point(18, 206);
             NisText.Name = "NisText";
             NisText.Size = new Size(516, 31);
-            NisText.TabIndex = 6;
-            NisText.TextChanged += NisText_TextChanged;
+            NisText.TabIndex = 3;
             // 
             // label4
             // 
@@ -190,7 +290,7 @@
             SiswaNameText.Location = new Point(16, 125);
             SiswaNameText.Name = "SiswaNameText";
             SiswaNameText.Size = new Size(518, 31);
-            SiswaNameText.TabIndex = 4;
+            SiswaNameText.TabIndex = 2;
             // 
             // label3
             // 
@@ -208,16 +308,17 @@
             SiswaIdText.Location = new Point(16, 47);
             SiswaIdText.Name = "SiswaIdText";
             SiswaIdText.Size = new Size(518, 31);
-            SiswaIdText.TabIndex = 0;
+            SiswaIdText.TabIndex = 1;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1128, 639);
+            ClientSize = new Size(1130, 639);
             Controls.Add(tabControl1);
             Name = "Form1";
             Text = "Form1";
+            Load += Form1_Load;
             tabControl1.ResumeLayout(false);
             tabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
@@ -240,7 +341,6 @@
         private Panel panel1;
         private Panel panel2;
         private Label label1;
-        private Label label2;
         private TextBox SiswaNameText;
         private Label label3;
         private TextBox SiswaIdText;
@@ -248,5 +348,14 @@
         private Label label4;
         private Label label5;
         private DateTimePicker TglLahirPicker;
+        private TextBox TempatLahirText;
+        private TextBox AlamatText;
+        private Label label7;
+        private ComboBox comboBox1;
+        private Label label6;
+        private Button SaveButton;
+        private TextBox KotaText;
+        private Button DeleteButton;
+        private Label label2;
     }
 }
