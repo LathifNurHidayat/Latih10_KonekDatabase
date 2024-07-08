@@ -8,25 +8,29 @@ namespace Latih10_KonekDatabase
             ListData();
         }
 
-
-
-
         public void ListData()
         {
             using var db = new SekolahKuDbContext();
-            var listSiswa = db.Siswa.ToList();
-            dataGridView1.DataSource = listSiswa;
+            var listsiswa = db.SISWA.ToList();
+            dataGridView1.DataSource = listsiswa;
             tabControl1.SelectedIndex = 0;
         }
+
+        private void NewButton_Click(object sender, EventArgs e)
+        {
+            NewSiswa();
+        }
+
         public void NewSiswa()
         {
             var newSiswa = new SiswaModel();
             using var db = new SekolahKuDbContext();
-            db.Siswa.Add(newSiswa);
+            db.SISWA.Add(newSiswa);
             db.SaveChanges();
 
             ShowInput(newSiswa);
         }
+
         public void ShowInput(SiswaModel siswa)
         {
             SiswaIdText.Text = siswa.SiswaId.ToString();
@@ -36,12 +40,21 @@ namespace Latih10_KonekDatabase
             TglLahirPicker.Value = siswa.TglLahir;
             AlamatText.Text = siswa.Alamat;
             KotaText.Text = siswa.Kota;
-            tabControl1.SelectedIndex = 1;
+
+            tabControl1.SelectedIndex = 1 ;
+
         }
+
+        private void SaveButton_Click(object sender, EventArgs e)
+        {
+            SaveData();
+            ListData();
+        }
+
         public void SaveData()
         {
             using var db = new SekolahKuDbContext();
-            var siswa = db.Siswa.Find(int.Parse(SiswaIdText.Text));
+            var siswa = db.SISWA.Find(int.Parse(SiswaIdText.Text));
 
             siswa.SiswaName = SiswaNameText.Text;
             siswa.Nis = NisText.Text;
@@ -51,44 +64,22 @@ namespace Latih10_KonekDatabase
             siswa.Kota = KotaText.Text;
 
             db.SaveChanges();
-        }
-
-
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
 
         }
 
-        private void SaveButton_Click_1(object sender, EventArgs e)
-        {
-            SaveData();
-            ListData();
-        }
-
-        private void NewButton_Click_1(object sender, EventArgs e)
-        {
-            NewSiswa();
-
-        }
-
-        private void dataGridView1_DoubleClick_1(object sender, EventArgs e)
+        private void dataGridView1_DoubleClick(object sender, EventArgs e)
         {
             var siswaId = dataGridView1.CurrentRow.Cells["SiswaId"].Value.ToString();
             if (siswaId is null)
                 return;
 
             using var db = new SekolahKuDbContext();
-            var siswa = db.Siswa.Find(int.Parse(siswaId));
+            var siswa = db.SISWA.Find(int.Parse(siswaId));
             ShowInput(siswa);
         }
 
-        private void DeleteButton_Click(object sender, EventArgs e)
-        {
-
-        }
+      
     }
 }
 
-        
-   
+

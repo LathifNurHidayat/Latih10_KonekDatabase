@@ -89,10 +89,10 @@
             NewButton.Location = new Point(946, 519);
             NewButton.Name = "NewButton";
             NewButton.Size = new Size(152, 49);
-            NewButton.TabIndex = 5;
+            NewButton.TabIndex = 0;
             NewButton.Text = "New";
             NewButton.UseVisualStyleBackColor = true;
-            NewButton.Click += NewButton_Click_1;
+            NewButton.Click += NewButton_Click;
             // 
             // dataGridView1
             // 
@@ -103,7 +103,7 @@
             dataGridView1.RowHeadersWidth = 62;
             dataGridView1.Size = new Size(1080, 456);
             dataGridView1.TabIndex = 4;
-            dataGridView1.DoubleClick += dataGridView1_DoubleClick_1;
+            dataGridView1.DoubleClick += dataGridView1_DoubleClick;
             // 
             // tabPage2
             // 
@@ -129,7 +129,7 @@
             SaveButton.TabIndex = 10;
             SaveButton.Text = "Save";
             SaveButton.UseVisualStyleBackColor = true;
-            SaveButton.Click += SaveButton_Click_1;
+            SaveButton.Click += SaveButton_Click;
             // 
             // DeleteButton
             // 
@@ -140,7 +140,6 @@
             DeleteButton.TabIndex = 9;
             DeleteButton.Text = "Delete";
             DeleteButton.UseVisualStyleBackColor = true;
-            DeleteButton.Click += DeleteButton_Click;
             // 
             // label1
             // 
@@ -307,6 +306,7 @@
             SiswaIdText.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             SiswaIdText.Location = new Point(16, 47);
             SiswaIdText.Name = "SiswaIdText";
+            SiswaIdText.ReadOnly = true;
             SiswaIdText.Size = new Size(518, 31);
             SiswaIdText.TabIndex = 1;
             // 
@@ -318,7 +318,6 @@
             Controls.Add(tabControl1);
             Name = "Form1";
             Text = "Form1";
-            Load += Form1_Load;
             tabControl1.ResumeLayout(false);
             tabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
