@@ -33,8 +33,8 @@
             NewButton = new Button();
             dataGridView1 = new DataGridView();
             tabPage2 = new TabPage();
-            SaveButton = new Button();
             DeleteButton = new Button();
+            SaveButton = new Button();
             label1 = new Label();
             panel2 = new Panel();
             KotaText = new TextBox();
@@ -73,6 +73,7 @@
             // 
             // tabPage1
             // 
+            tabPage1.BackColor = Color.PaleGoldenrod;
             tabPage1.Controls.Add(NewButton);
             tabPage1.Controls.Add(dataGridView1);
             tabPage1.Location = new Point(4, 34);
@@ -81,34 +82,39 @@
             tabPage1.Size = new Size(1122, 601);
             tabPage1.TabIndex = 0;
             tabPage1.Text = "List Data";
-            tabPage1.UseVisualStyleBackColor = true;
             // 
             // NewButton
             // 
             NewButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            NewButton.Location = new Point(946, 519);
+            NewButton.BackColor = Color.ForestGreen;
+            NewButton.FlatStyle = FlatStyle.Flat;
+            NewButton.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            NewButton.ForeColor = SystemColors.Control;
+            NewButton.Location = new Point(954, 523);
             NewButton.Name = "NewButton";
-            NewButton.Size = new Size(152, 49);
-            NewButton.TabIndex = 0;
+            NewButton.Size = new Size(144, 40);
+            NewButton.TabIndex = 2;
             NewButton.Text = "New";
-            NewButton.UseVisualStyleBackColor = true;
+            NewButton.UseVisualStyleBackColor = false;
             NewButton.Click += NewButton_Click;
             // 
             // dataGridView1
             // 
             dataGridView1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dataGridView1.BackgroundColor = Color.DarkKhaki;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Location = new Point(18, 33);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 62;
             dataGridView1.Size = new Size(1080, 456);
-            dataGridView1.TabIndex = 4;
+            dataGridView1.TabIndex = 1;
             dataGridView1.DoubleClick += dataGridView1_DoubleClick;
             // 
             // tabPage2
             // 
-            tabPage2.Controls.Add(SaveButton);
+            tabPage2.BackColor = Color.PaleGoldenrod;
             tabPage2.Controls.Add(DeleteButton);
+            tabPage2.Controls.Add(SaveButton);
             tabPage2.Controls.Add(label1);
             tabPage2.Controls.Add(panel2);
             tabPage2.Controls.Add(panel1);
@@ -118,28 +124,36 @@
             tabPage2.Size = new Size(1122, 601);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "Input Data";
-            tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // SaveButton
-            // 
-            SaveButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            SaveButton.Location = new Point(993, 546);
-            SaveButton.Name = "SaveButton";
-            SaveButton.Size = new Size(112, 34);
-            SaveButton.TabIndex = 10;
-            SaveButton.Text = "Save";
-            SaveButton.UseVisualStyleBackColor = true;
-            SaveButton.Click += SaveButton_Click;
             // 
             // DeleteButton
             // 
             DeleteButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            DeleteButton.Location = new Point(860, 546);
+            DeleteButton.BackColor = Color.Red;
+            DeleteButton.FlatAppearance.BorderSize = 0;
+            DeleteButton.FlatStyle = FlatStyle.Flat;
+            DeleteButton.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            DeleteButton.ForeColor = SystemColors.Control;
+            DeleteButton.Location = new Point(870, 544);
             DeleteButton.Name = "DeleteButton";
             DeleteButton.Size = new Size(112, 34);
             DeleteButton.TabIndex = 9;
             DeleteButton.Text = "Delete";
-            DeleteButton.UseVisualStyleBackColor = true;
+            DeleteButton.UseVisualStyleBackColor = false;
+            // 
+            // SaveButton
+            // 
+            SaveButton.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            SaveButton.BackColor = Color.Blue;
+            SaveButton.FlatStyle = FlatStyle.Flat;
+            SaveButton.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            SaveButton.ForeColor = SystemColors.Control;
+            SaveButton.Location = new Point(1002, 544);
+            SaveButton.Name = "SaveButton";
+            SaveButton.Size = new Size(112, 34);
+            SaveButton.TabIndex = 10;
+            SaveButton.Text = "Save";
+            SaveButton.UseVisualStyleBackColor = false;
+            SaveButton.Click += SaveButton_Click;
             // 
             // label1
             // 
@@ -152,7 +166,7 @@
             // panel2
             // 
             panel2.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            panel2.BackColor = Color.Silver;
+            panel2.BackColor = Color.DarkKhaki;
             panel2.Controls.Add(KotaText);
             panel2.Controls.Add(AlamatText);
             panel2.Controls.Add(label7);
@@ -243,7 +257,7 @@
             // panel1
             // 
             panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
-            panel1.BackColor = Color.Silver;
+            panel1.BackColor = Color.DarkKhaki;
             panel1.Controls.Add(label2);
             panel1.Controls.Add(NisText);
             panel1.Controls.Add(label4);
@@ -317,6 +331,7 @@
             ClientSize = new Size(1130, 639);
             Controls.Add(tabControl1);
             Name = "Form1";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
             tabControl1.ResumeLayout(false);
             tabPage1.ResumeLayout(false);
@@ -354,7 +369,7 @@
         private Label label6;
         private Button SaveButton;
         private TextBox KotaText;
-        private Button DeleteButton;
         private Label label2;
+        private Button DeleteButton;
     }
 }

@@ -6,6 +6,9 @@ namespace Latih10_KonekDatabase
         {
             InitializeComponent();
             ListData();
+
+            comboBox1.Items.Add("Laki - Laki");
+            comboBox1.Items.Add("Perempuan");
         }
 
         public void ListData()
@@ -41,7 +44,7 @@ namespace Latih10_KonekDatabase
             AlamatText.Text = siswa.Alamat;
             KotaText.Text = siswa.Kota;
 
-            tabControl1.SelectedIndex = 1 ;
+            tabControl1.SelectedIndex = 1;
 
         }
 
@@ -62,6 +65,7 @@ namespace Latih10_KonekDatabase
             siswa.TglLahir = TglLahirPicker.Value;
             siswa.Alamat = AlamatText.Text;
             siswa.Kota = KotaText.Text;
+            siswa.Gender = comboBox1.SelectedItem.ToString();
 
             db.SaveChanges();
 
@@ -77,8 +81,6 @@ namespace Latih10_KonekDatabase
             var siswa = db.SISWA.Find(int.Parse(siswaId));
             ShowInput(siswa);
         }
-
-      
     }
 }
 
