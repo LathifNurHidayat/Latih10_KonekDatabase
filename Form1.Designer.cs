@@ -93,7 +93,7 @@
             NewButton.Location = new Point(954, 523);
             NewButton.Name = "NewButton";
             NewButton.Size = new Size(144, 40);
-            NewButton.TabIndex = 2;
+            NewButton.TabIndex = 1;
             NewButton.Text = "New";
             NewButton.UseVisualStyleBackColor = false;
             NewButton.Click += NewButton_Click;
@@ -107,7 +107,7 @@
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 62;
             dataGridView1.Size = new Size(1080, 456);
-            dataGridView1.TabIndex = 1;
+            dataGridView1.TabIndex = 0;
             dataGridView1.DoubleClick += dataGridView1_DoubleClick;
             // 
             // tabPage2
